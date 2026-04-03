@@ -600,7 +600,7 @@ Shows retrieving all projects:
 - **Response Body:** Project details including assigned employees
 
 ### 3. PUT /api/Employees/{id} - Update Employee
-![PUT Employee](screenshots/Screenshot%202026-04-03%20002640.png)
+![PUT Employee](screenshots/Screenshot%202026-04-03%20023426.png)
 
 Shows updating an existing employee:
 - **Parameter:** Employee ID = 1
