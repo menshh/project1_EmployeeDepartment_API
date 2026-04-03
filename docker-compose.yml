@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: employeedepartment-api
+    ports:
+      - "5000:80"
+      - "5001:443"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=EmployeeDepartmentDb;Uid=root;Pwd=YourStrongPassword123;AllowUserVariables=True
+      - Jwt__Key=ThisIsASecretKeyForJwtToken123456789
+      - Jwt__Issuer=EmployeeDepartment
+      - Jwt__Audience=EmployeeDepartmentUsers
+      - Jwt__DurationInMinutes=60
+    networks:
+      - employeedepartment-network
+
+  db:
+    image: mysql:8.0
+    container_name: employeedepartment-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=YourStrongPassword123
+      - MYSQL_DATABASE=EmployeeDepartmentDb
+      - MYSQL_USER=appuser
+      - MYSQL_PASSWORD=appuser123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - employeedepartment-network
+    restart: unless-stopped
+
+  adminer:
+    image: adminer:latest
+    container_name: employeedepartment-adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - employeedepartment-network
+
+volumes:
+  mysql_data:
+
+networks:
+  employeedepartment-network:
+    driver: bridge
