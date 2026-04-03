@@ -477,7 +477,7 @@ Shows successful authentication with:
 - **Response:** 200 OK status
 - **Response Body:** Contains JWT token, expiration time, username, and role
 
-![Login](screenshots/Screenshot%202026-04-03%20020653.png)
+![Login](<screenshots/Screenshot 2026-04-03 020653.png>)
 
 - **Curl:**
 ```bash
@@ -495,7 +495,7 @@ Shows authorization configuration:
 - **Authorize Button:** Successfully configured
 - **Note:** Token is entered without the "Bearer " prefix in Swagger
 
-![Authorize](screenshots/Screenshot%202026-04-03%20020832.png)
+![Authorize](screenshots/Screenshot%202026-04-03%20030639.png)
 
 ### Screenshot 3: Access Protected Endpoint (GET Departments)
 **Endpoint:** `GET /api/Departments`
@@ -506,7 +506,7 @@ Shows successful access to protected resource:
 - **Response Body:** Empty array `[]` (no departments created yet)
 - **Proof:** Authentication working - no 401 error
 
-![GET Departments](screenshots/Screenshot%202026-04-03%20022641.png)
+![GET Departments](screenshots/Screenshot%202026-04-03%20002547.png)
 
 ### Screenshot 4: Create Department (POST)
 **Endpoint:** `POST /api/Departments`
@@ -522,7 +522,7 @@ Shows resource creation:
 - **Response:** 201 Created
 - **Response Body:** Created department with ID, name, location, employeesCount: 0
 
-![Create Department](screenshots/Screenshot%202026-04-03%20022732.png)
+![Create Department](screenshots/Screenshot%202026-04-03%20002619.png)
 
 ### Screenshot 5: Get Department by ID
 **Endpoint:** `GET /api/Departments/1`
@@ -532,7 +532,7 @@ Shows retrieval of specific resource:
 - **Response Body:** Department with ID, name, location, and employee count
 - **Proof:** Resource created in Screenshot 4 is now retrievable
 
-![GET Department by ID](screenshots/Screenshot%202026-04-03%20002752.png)
+![GET Department by ID](screenshots/Screenshot%202026-04-03%20022641.png)
 ### Screenshot 6: 401 Unauthorized Error (No Token)
 **Endpoint:** `GET /api/Departments` (without authorization)
 
@@ -567,7 +567,7 @@ Shows DTO validation working:
 }
 ```
 
-![Validation Error](screenshots/Screenshot%202026-04-03%20022811-1.png)
+![Validation Error](screenshots/Screenshot%202026-04-03%20022732.png)
 
 ### Screenshot 8: Hangfire Dashboard
 **URL:** `https://localhost:7166/hangfire`
@@ -578,14 +578,14 @@ Shows background job monitoring:
 - **Servers:** Connected Hangfire server instances
 - **Queues:** Job queue status
 
-![Hangfire](screenshots/Screenshot%202026-04-03%20002811.png)
+![Hangfire](screenshots/Screenshot%202026-04-03%20031658.png)
 
 ## Endpoints Screenshots
 
 The following screenshots demonstrate actual API endpoint testing in Swagger UI:
 
 ### 1. POST /api/Projects - Create Project
-![POST Projects](screenshots/Screenshot%202026-04-03%20002547.png)
+![POST Projects](screenshots/Screenshot%202026-04-03%20002811-2.png)
 
 Shows creating a new project with:
 - **Request Body:** Project details (name, description, budget, dates)
@@ -593,7 +593,7 @@ Shows creating a new project with:
 - **Authorization:** Bearer token included in request
 
 ### 2. GET /api/Projects - List All Projects
-![GET Projects](screenshots/Screenshot%202026-04-03%20002619.png)
+![GET Projects](screenshots/Screenshot%202026-04-03%20002752.png)
 
 Shows retrieving all projects:
 - **Response:** 200 OK with array of projects
@@ -615,14 +615,14 @@ Shows creating a new employee:
 - **Response:** 201 Created with full employee object including ID
 
 ### 5. GET /api/Employees - List All Employees
-![GET Employees](screenshots/Screenshot%202026-04-03%20002730.png)
+![GET Employees](screenshots/Screenshot%202026-04-03%20002640.png)
 
 Shows retrieving all employees:
 - **Response:** 200 OK with array of employees
 - **Response Body:** Full employee details including department name, profile, and assigned projects
 
 ### 6. POST /api/Auth/login - Authentication
-![Login](screenshots/Screenshot%202026-04-03%20020653.png)
+![Login](screenshots/Screenshot%202026-04-03%20033211.png)
 
 Shows successful login with admin credentials:
 - **Request:** username "admin", password "admin123"
@@ -636,7 +636,7 @@ Shows how to authorize in Swagger:
 - **Available Authorizations:** Shows green checkmark when authorized
 
 ### 8. Hangfire Dashboard
-![Hangfire](screenshots/Screenshot%202026-04-03%20002811.png)
+![Hangfire](screenshots/Screenshot%202026-04-03%20032648.png)
 
 Shows background job monitoring dashboard with recurring jobs listed
 
